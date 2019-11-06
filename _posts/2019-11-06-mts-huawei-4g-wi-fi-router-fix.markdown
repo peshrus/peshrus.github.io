@@ -6,12 +6,12 @@ categories: mts huawei 874FT fix
 ---
 # Long Story Short
 
-On 2nd of October I bought a [MTS 4G Wi-Fi router 874FT produced by Huawei](https://spb.mts.ru/personal/mobilnaya-svyaz/mobilniy-internet/modemy-i-routery/). 
+On the 2nd of October, I bought an [MTS 4G Wi-Fi router 874FT produced by Huawei](https://spb.mts.ru/personal/mobilnaya-svyaz/mobilniy-internet/modemy-i-routery/). 
 It worked well and displayed SMS in a way below:
 
 ![MTS 4G Wi-Fi router 874FT SMS UI](/assets/2019-11-06-mts-huawei-4g-wi-fi-router-fix/sms-ui.jpg)
 
-When I changed my plan on 28th of October to a new one I stopped to receive SMS messages and could 
+When I changed my plan on the 28th of October to a new one I stopped to receive SMS messages and could 
 not realize why. That is how I found the bug.
 
 # The Bug Localization
@@ -76,7 +76,7 @@ The line `380` was `callback(false, "error_info")` and the real `callback` was:
     }
 ```
 
-The problem was in line `showAlert(result.data)`:
+The problem was in the line `showAlert(result.data)`:
 ```
 ReferenceError: result is not defined
     at eval (eval at <anonymous> (eval at <anonymous> (http://192.168.1.1/js/jquery-1.8.2.min.js:2:14070)), <anonymous>:1:1)
