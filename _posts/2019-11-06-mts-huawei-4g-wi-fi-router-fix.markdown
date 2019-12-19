@@ -161,7 +161,7 @@ function getSMSMessages(param, callback) {
         cache: false,
         dataType: "text",
         success: function(text) {
-            let data = $.parseJSON(text.replace(/"MTS[^"]*"/, '"MTC"'));
+            let data = $.parseJSON(text.replace(/"MTS[^"]*"/g, '"MTC"'));
             callback(true, data.messages || []);
         },
         error: function() {
@@ -171,6 +171,6 @@ function getSMSMessages(param, callback) {
 }
 ```
 
-I changed `dataType` to `text` and did the parsing to JSON manually: `let data = $.parseJSON(text.replace(/"MTS[^"]*"/, '"MTC"'));`.
+I changed `dataType` to `text` and did the parsing to JSON manually: `let data = $.parseJSON(text.replace(/"MTS[^"]*"/g, '"MTC"'));`.
 
 It allowed me to delete that buggy message and to see all the new messages.
