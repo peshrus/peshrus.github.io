@@ -4,7 +4,6 @@ title:  "Oracle Certified Associate, Java SE 8 Programmer"
 date:   2019-05-13 14:28:00 +0300
 categories: java oca
 ---
-[![Alt](https://images.youracclaim.com/images/7b8d90af-f937-4068-9179-01cdc6700c74/5274_badge_database_admininstrator_600x600_Certified-Associate-JAVA-SE8-PROGRAMMER.png "Oracle Certified Associate, Java SE 8 Programmer")](https://www.youracclaim.com/badges/c9d1fafc-1570-4113-bc67-e8966362f013)
+[![Oracle Certified Associate, Java SE 8 Programmer](https://images.youracclaim.com/size/340x340/images/a9848abf-f8bd-474d-a9b4-6086da11a916/Oracle_Associates_Badge__1_.png "Oracle Certified Associate, Java SE 8 Programmer")](https://www.youracclaim.com/badges/c9d1fafc-1570-4113-bc67-e8966362f013)
 
-> An Oracle Certified Associate, Java SE 8 Programmer has demonstrated knowledge of object-oriented concepts, the Java programming language and 
-general knowledge of Java platforms and technologies.
+> An Oracle Certified Associate, Java SE 8 Programmer has demonstrated knowledge of object-oriented concepts, the Java programming language and general knowledge of Java platforms and technologies.
