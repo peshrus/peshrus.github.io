@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Hi, I'm Ruslan Peshchuk, senior java developer, tech lead, people manager.
+Hi, I'm Ruslan Peshchuk, java software engineer, tech lead, people manager.
 
 🚀 My mission is to produce software helping customers to make their business 💨 faster / 📈 better / 💰 cost-effective.
 
