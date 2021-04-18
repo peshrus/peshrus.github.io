@@ -6,7 +6,7 @@ categories: auth0 sp ssocircle idp saml authentication
 ---
 # Auth0 Service Provider + SSOCircle Identity Provider = Security Assertion Markup Language Authentication
 
-This is a step-by-step-guide how to configure a working Security Assertion Markup Language (SAML)
+This is a step-by-step guide on how to configure a working Security Assertion Markup Language (SAML)
 authentication between Auth0 as a Service Provider (SP) and SSOCircle as an Identity Provider (IdP).
 This type of authentication is also known as Single sign-on (SSO).
 
