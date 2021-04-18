@@ -14,11 +14,11 @@ This type of authentication is also known as Single sign-on (SSO).
 
 1. Go to **Authentication -> Enterprise**
 
-![Authentication Enterprise](/assets/2021-04-18-auth0-sp-ssocircle-idp-saml-configuration/auth-enterprise.png)
+    ![Authentication Enterprise](/assets/2021-04-18-auth0-sp-ssocircle-idp-saml-configuration/auth-enterprise.png)
 
 2. Create a new **SAML** connection
 
-![SAML](/assets/2021-04-18-auth0-sp-ssocircle-idp-saml-configuration/saml.png)
+    ![SAML](/assets/2021-04-18-auth0-sp-ssocircle-idp-saml-configuration/saml.png)
 
 3. Set the following fields:
     * **Connection name**: ssocircle (can be any name you want)
@@ -95,11 +95,11 @@ This type of authentication is also known as Single sign-on (SSO).
 
 9. Go to **Branding -> Universal Login**
 
-![Branding Universal Login](/assets/2021-04-18-auth0-sp-ssocircle-idp-saml-configuration/universal-login.png)
+    ![Branding Universal Login](/assets/2021-04-18-auth0-sp-ssocircle-idp-saml-configuration/universal-login.png)
 
 10. Set **Initial Sign-in screen -> Identifier First**
 
-![Identifier First](/assets/2021-04-18-auth0-sp-ssocircle-idp-saml-configuration/identifier-first.png)
+    ![Identifier First](/assets/2021-04-18-auth0-sp-ssocircle-idp-saml-configuration/identifier-first.png)
 
 ### SSOCircle side
 
