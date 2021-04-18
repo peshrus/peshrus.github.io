@@ -14,6 +14,6 @@ or used to create new ones.
 In both cases the build time can be saved just by adding "-alpine" to the version, you reduce the
 download time so.
 
-![img.png](/assets/2021-04-18-alpine-based-docker-images.png)
+![The size of non-Alpine-based and Alpine-based images](/assets/2021-04-18-alpine-based-docker-images.png "The size of non-Alpine-based and Alpine-based images")
 
 As a bonus, you save the disk space needed to store the image locally.
