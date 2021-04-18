@@ -68,7 +68,7 @@ This type of authentication is also known as Single sign-on (SSO).
         <saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">urn:auth0:YOUR_TENANT:ssocircle</saml:Issuer>
     </samlp:AuthnRequest>
    ```
-   **Issuer** is the **Entity ID**, the format can be
+   The **Issuer** is the **Entity ID**, the format can be
    found [here](https://auth0.com/docs/protocols/saml-protocol/saml-identity-provider-configuration-settings#entity-id).
 
 4. Click **"Create"**
