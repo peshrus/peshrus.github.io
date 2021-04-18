@@ -12,8 +12,8 @@ Many projects use Docker images for development and production purposes. The ima
 or used to create new ones.
 
 In both cases the build time can be saved just by adding "-alpine" to the version, you reduce the
-download time so:
+download time so.
 
 ![img.png](/assets/2021-04-18-alpine-based-docker-images.png)
 
-As a bonus you save disk space needed to store the image locally. 
+As a bonus, you save the disk space needed to store the image locally.
