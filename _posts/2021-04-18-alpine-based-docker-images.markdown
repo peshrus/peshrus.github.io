@@ -4,7 +4,6 @@ title:  "Use Alpine-based Docker images to reduce the build time and disk space 
 date:   2021-04-18 18:36:00 +0100
 categories: docker alpine build
 ---
-# Use Alpine-based Docker images to reduce the build time and disk space usage
 
 ![Alpine Linux Logo](https://alpinelinux.org/alpinelinux-logo.svg "Alpine Linux Logo")
 

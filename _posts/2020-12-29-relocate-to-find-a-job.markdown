@@ -4,7 +4,6 @@ title:  "Relocate to find a job"
 date:   2020-12-29 16:27:00 +0100
 categories: liquibase docker maven
 ---
-# Relocate to find a job
 
 ![Photo by SpaceX on Unsplash](/assets/2020-12-29-relocate-to-find-a-job/rocket.jpeg "Photo by SpaceX on Unsplash")
 

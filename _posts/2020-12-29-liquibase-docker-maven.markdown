@@ -4,7 +4,6 @@ title:  "How to check Liquibase scripts using Docker during Maven build"
 date:   2020-12-29 15:21:00 +0100
 categories: liquibase docker maven
 ---
-# How to check Liquibase scripts using Docker during Maven build
 
 The example below shows how to run the project Liquibase changelog files against Oracle DB. The
 same approach can be used with any database. Enjoy!

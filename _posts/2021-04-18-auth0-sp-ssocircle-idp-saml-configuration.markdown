@@ -4,13 +4,12 @@ title:  "Auth0 SP + SSOCircle IdP = SAML Authentication"
 date:   2021-04-18 20:12:00 +0100
 categories: auth0 sp ssocircle idp saml authentication
 ---
-# Auth0 Service Provider + SSOCircle Identity Provider = Security Assertion Markup Language Authentication
 
 This is a step-by-step guide on how to configure a working Security Assertion Markup Language (SAML)
 authentication between Auth0 as a Service Provider (SP) and SSOCircle as an Identity Provider (IdP).
 This type of authentication is also known as Single sign-on (SSO).
 
-### Auth0 side
+## Auth0 side
 
 1. Go to **Authentication -> Enterprise**
 
@@ -101,7 +100,7 @@ This type of authentication is also known as Single sign-on (SSO).
 
     ![Identifier First](/assets/2021-04-18-auth0-sp-ssocircle-idp-saml-configuration/identifier-first.png)
 
-### SSOCircle side
+## SSOCircle side
 
 1. [Register](https://idp.ssocircle.com/sso/UI/Login)
 

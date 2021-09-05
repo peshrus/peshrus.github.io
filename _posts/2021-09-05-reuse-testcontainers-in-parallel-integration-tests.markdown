@@ -1,10 +1,9 @@
 ---
 layout: post
 title:  "Reuse test containers in parallel integration tests"
-date:   2021-09-05 09:13:00 +0100
+date:   2021-09-05 09:13:00 +0200
 categories: testcontainers integration-tests
 ---
-# Reuse test containers in parallel integration tests
 
 ## Motivation
 

@@ -4,7 +4,7 @@ title:  "A fix of SMS UI for MTS 4G Wi-Fi router 874FT"
 date:   2019-11-06 18:13:00 +0300
 categories: mts huawei 874FT fix
 ---
-# Long Story Short
+## Long Story Short
 
 On the 2nd of October, I bought an [MTS 4G Wi-Fi router 874FT produced by Huawei](https://spb.mts.ru/personal/mobilnaya-svyaz/mobilniy-internet/modemy-i-routery/). 
 It worked well and displayed SMS in a way below:
@@ -14,7 +14,7 @@ It worked well and displayed SMS in a way below:
 When I changed my plan on the 28th of October to a new one I stopped to receive SMS messages and could 
 not realize why. That is how I found the bug.
 
-# The Bug Localization
+## The Bug Localization
 The page on the screenshot above had the following URL `http://192.168.1.1/index.html#sms` and it 
 had the following error in the browser console:
 ```
@@ -122,7 +122,7 @@ errorThrown: SyntaxError: Unexpected token  in JSON at position 2149 at JSON.pa
     at XMLHttpRequest.d (http://192.168.1.1/js/jquery-1.8.2.min.js:2:86374)
 ```
 
-# The Root Cause & The Fix
+## The Root Cause & The Fix
 
 `service.js` requested the following URL 
 `http://192.168.1.1/goform/goform_get_cmd_process?cmd=sms_data_total&data_per_page=100&mem_store=1&order_by=order%20by%20id%20desc&page=0&tags=12` 
