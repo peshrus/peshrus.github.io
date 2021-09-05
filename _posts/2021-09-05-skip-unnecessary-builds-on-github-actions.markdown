@@ -73,7 +73,6 @@ jobs:
       # Any further step should have the IF-check as it's used in the previous step
 ``` 
 
-## Solution
+## Further reading
 
-Further
-reading: [Skip Duplicate Actions](https://github.com/fkirc/skip-duplicate-actions#skip-duplicate-actions)
+[Skip Duplicate Actions](https://github.com/fkirc/skip-duplicate-actions#skip-duplicate-actions)
