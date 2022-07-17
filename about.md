@@ -15,7 +15,7 @@ My core values:
  4. Mutual trust
  5. Pithiness of communications
 
-I work with Java and I can use any related libraries and tools to achieve goals set by your business. Read my [CV](http://tiny.cc/zbvcbz). 
+I work with Java and I can use any related libraries and tools to achieve goals set by your business. Read my [CV](https://docs.google.com/document/d/1sniRbbTAeSvsQOjrXtu2-uteTbu8GiI4i126yWmOUqc/edit?usp=sharing). 
 If you are interested in my expertise, [send me an email](mailto:peshrus@gmail.com) or [text me in Telegram](https://t.me/peshrus).
 
 I have some [travel blogging](http://russians-in-ireland.blogspot.com/) experience and [blogging about remote work](https://medium.com/@peshrus) 
