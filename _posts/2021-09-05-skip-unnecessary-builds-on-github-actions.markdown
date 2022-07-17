@@ -38,7 +38,7 @@ jobs:
         with:
           paths: '["backend/gradle/**", "backend/src/**", "backend/build.gradle", "backend/gradle.properties", "backend/settings.gradle"]'
       - name: Set up JDK 1.8
-        if: ${{ steps.skip_build.outputs.should_skip != 'true' }}
+        if: {% raw %}${{ steps.skip_build.outputs.should_skip != 'true' }}{% endraw %}
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
@@ -66,7 +66,7 @@ jobs:
         with:
           paths: '["frontend/src/**", "frontend/package.json"]'
       - name: Setup Node.js environment
-        if: ${{ steps.skip_build.outputs.should_skip != 'true' }}
+        if: {% raw %}${{ steps.skip_build.outputs.should_skip != 'true' }}{% endraw %}
         uses: actions/setup-node@v1
         with:
           node-version: 12
