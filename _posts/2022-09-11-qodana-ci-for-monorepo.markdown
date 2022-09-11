@@ -101,17 +101,17 @@ jobs:
   [The Qodana documentation](https://github.com/JetBrains/qodana-action#basic-configuration) recommends this setting.
 - To understand why `fkirc/skip-duplicate-actions@master` is used, see 
   [Skip unnecessary builds on GitHub actions](https://peshrus.github.io/github-actions/skip-build/2021/09/05/skip-unnecessary-builds-on-github-actions.html)
-- `JetBrains/qodana-action@v2022.2.1` is available, but it doesn't work (see [the found bugs](#Found bugs)).
+- `JetBrains/qodana-action@v2022.2.1` is available, but it doesn't work (see [the found bugs](#found-bugs)).
 - `--project-dir,backend` & `--project-dir,frontend` are used to switch the Qodana project directory. In that directory I have `qodana.yaml`
   & `qodana.sarif.json` files.
 - `--baseline,qodana.sarif.json` is used to set up the baseline for the Qodana scan.
 - `--commit,CI{% raw %}${{ github.event.pull_request.base.sha }}{% endraw %}` is set to scan only PR-related changes. The `pr-mode` setting
-  doesn't work because of the bug (see [the found bugs](#Found bugs)).
+  doesn't work because of the bug (see [the found bugs](#found-bugs)).
 - `results-dir`, `artifact-name`, `cache-dir`, and `additional-cache-hash` are used to add the `-backend` and
   the `-frontend` postfixes to separate 2 steps that are executed in the same job. Otherwise, they clash with each
   other.
 - `pr-mode: true` is the default value that adds to `args` `--changes,--commit,CI<SHA>`. However `--changes` raises an
-  exception when it's used in a sub-folder (see [the found bugs](#Found bugs)). That's the reason why `pr-mode` is set
+  exception when it's used in a sub-folder (see [the found bugs](#found-bugs)). That's the reason why `pr-mode` is set
   to `false` and `--commit` is set manually.
 
 ## Found bugs
