@@ -75,7 +75,7 @@ jobs:
         id: skip-scan
         uses: fkirc/skip-duplicate-actions@master
         with:
-          paths: '["frontends/**"]'
+          paths: '["frontend/**"]'
 
       - name: Scan the project
         if: steps.skip-scan.outputs.should_skip != 'true'
