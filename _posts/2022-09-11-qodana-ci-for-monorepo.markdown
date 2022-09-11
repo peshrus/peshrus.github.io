@@ -30,7 +30,7 @@ on:
     types: [ synchronize, opened, reopened, ready_for_review ]
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  group: {% raw %}${{ github.workflow }}{% endraw %}-{% raw %}${{ github.head_ref || github.run_id }}{% endraw %}
   cancel-in-progress: true
 
 jobs:
@@ -55,11 +55,11 @@ jobs:
         timeout-minutes: 20
         with:
           # https://github.com/jetbrains/qodana-cli#options-1
-          args: --project-dir,backend,--baseline,qodana.sarif.json,--commit,CI${{ github.event.pull_request.base.sha }}
-          results-dir: ${{ runner.temp }}/qodana/results-backend
+          args: --project-dir,backend,--baseline,qodana.sarif.json,--commit,CI{% raw %}${{ github.event.pull_request.base.sha }}{% endraw %}
+          results-dir: {% raw %}${{ runner.temp }}{% endraw %}/qodana/results-backend
           artifact-name: qodana-report-backend
-          cache-dir: ${{ runner.temp }}/qodana/caches-backend
-          additional-cache-hash: ${{ github.sha }}-backend
+          cache-dir: {% raw %}${{ runner.temp }}{% endraw %}/qodana/caches-backend
+          additional-cache-hash: {% raw %}${{ github.sha }}{% endraw %}-backend
           pr-mode: false # otherwise, it adds the --changes flag and the check fails
 
   qodana-frontend:
@@ -83,11 +83,11 @@ jobs:
         timeout-minutes: 5
         with:
           # https://github.com/jetbrains/qodana-cli#options-1
-          args: --project-dir,frontends,--baseline,qodana.sarif.json,--commit,CI${{ github.event.pull_request.base.sha }}
-          results-dir: ${{ runner.temp }}/qodana/results-frontend
+          args: --project-dir,frontend,--baseline,qodana.sarif.json,--commit,CI{% raw %}${{ github.event.pull_request.base.sha }}{% endraw %}
+          results-dir: {% raw %}${{ runner.temp }}{% endraw %}/qodana/results-frontend
           artifact-name: qodana-report-frontend
-          cache-dir: ${{ runner.temp }}/qodana/caches-frontend
-          additional-cache-hash: ${{ github.sha }}-frontend
+          cache-dir: {% raw %}${{ runner.temp }}{% endraw %}/qodana/caches-frontend
+          additional-cache-hash: {% raw %}${{ github.sha }}{% endraw %}-frontend
           pr-mode: false # otherwise, it adds the --changes flag and the check fails
 ```
 
@@ -97,15 +97,15 @@ jobs:
   are skipped).
 - The action uses the `concurrency` setting to cancel previous runs when a newer version of code is pushed to the
   branch.
-- `fetch-depth: 0` is set to fetch all history for all branches and tags (see https://github.com/actions/checkout#checkout-v3).
+- `fetch-depth: 0` is set to fetch all history for all branches and tags (see [Checkout V3](https://github.com/actions/checkout#checkout-v3)).
   [The Qodana documentation](https://github.com/JetBrains/qodana-action#basic-configuration) recommends this setting.
 - To understand why `fkirc/skip-duplicate-actions@master` is used, see 
   [Skip unnecessary builds on GitHub actions](https://peshrus.github.io/github-actions/skip-build/2021/09/05/skip-unnecessary-builds-on-github-actions.html)
 - `JetBrains/qodana-action@v2022.2.1` is available, but it doesn't work (see [the found bugs](#Found bugs)).
-- `--project-dir,backend` is used to switch the Qodana project directory. In that directory I have `qodana.yaml`
+- `--project-dir,backend` & `--project-dir,frontend` are used to switch the Qodana project directory. In that directory I have `qodana.yaml`
   & `qodana.sarif.json` files.
 - `--baseline,qodana.sarif.json` is used to set up the baseline for the Qodana scan.
-- `--commit,CI${{ github.event.pull_request.base.sha }}` is set to scan only PR-related changes. The `pr-mode` setting
+- `--commit,CI{% raw %}${{ github.event.pull_request.base.sha }}{% endraw %}` is set to scan only PR-related changes. The `pr-mode` setting
   doesn't work because of the bug (see [the found bugs](#Found bugs)).
 - `results-dir`, `artifact-name`, `cache-dir`, and `additional-cache-hash` are used to add the `-backend` and
   the `-frontend` postfixes to separate 2 steps that are executed in the same job. Otherwise, they clash with each
