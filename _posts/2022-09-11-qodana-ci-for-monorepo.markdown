@@ -119,6 +119,7 @@ jobs:
 - [JetBrains/qodana-action@v2022.2.1 fails with an exception when used in a monorepo project](https://youtrack.jetbrains.com/issue/QD-4015)
 - [The --changes argument raises an exception when used in a sub-folder of a monorepo project](https://youtrack.jetbrains.com/issue/QD-4014)
 - [qodana.baselinePath setting in build.gradle raises an error](https://youtrack.jetbrains.com/issue/QD-4013)
+- [The --source-directory argument with a sub-folder in a monorepo produces no results](https://youtrack.jetbrains.com/issue/QD-4025)
 
 ## Further reading
 
