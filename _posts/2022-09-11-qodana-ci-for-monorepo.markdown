@@ -40,8 +40,6 @@ jobs:
     steps:
       - name: Checkout the project
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # reports issues that appeared only in that pull request
 
       - name: Skip the backend scan
         id: skip-scan
@@ -51,11 +49,11 @@ jobs:
 
       - name: Scan the project
         if: steps.skip-scan.outputs.should_skip != 'true'
-        uses: JetBrains/qodana-action@v2022.1.1
+        uses: JetBrains/qodana-action@v2022.2.2
         timeout-minutes: 20
         with:
           # https://github.com/jetbrains/qodana-cli#options-1
-          args: --project-dir,backend,--baseline,qodana.sarif.json,--commit,CI{% raw %}${{ github.event.pull_request.base.sha }}{% endraw %}
+          args: --project-dir,backend,--baseline,qodana.sarif.json
           results-dir: {% raw %}${{ runner.temp }}{% endraw %}/qodana/results-backend
           artifact-name: qodana-report-backend
           cache-dir: {% raw %}${{ runner.temp }}{% endraw %}/qodana/caches-backend
@@ -68,8 +66,6 @@ jobs:
     steps:
       - name: Checkout the project
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # reports issues that appeared only in that pull request
 
       - name: Skip the frontend scan
         id: skip-scan
@@ -79,11 +75,11 @@ jobs:
 
       - name: Scan the project
         if: steps.skip-scan.outputs.should_skip != 'true'
-        uses: JetBrains/qodana-action@v2022.1.1
+        uses: JetBrains/qodana-action@v2022.2.2
         timeout-minutes: 5
         with:
           # https://github.com/jetbrains/qodana-cli#options-1
-          args: --project-dir,frontend,--baseline,qodana.sarif.json,--commit,CI{% raw %}${{ github.event.pull_request.base.sha }}{% endraw %}
+          args: --project-dir,frontend,--baseline,qodana.sarif.json
           results-dir: {% raw %}${{ runner.temp }}{% endraw %}/qodana/results-frontend
           artifact-name: qodana-report-frontend
           cache-dir: {% raw %}${{ runner.temp }}{% endraw %}/qodana/caches-frontend
@@ -97,29 +93,26 @@ jobs:
   are skipped).
 - The action uses the `concurrency` setting to cancel previous runs when a newer version of code is pushed to the
   branch.
-- `fetch-depth: 0` is set to fetch all history for all branches and tags (see [Checkout V3](https://github.com/actions/checkout#checkout-v3)).
-  [The Qodana documentation](https://github.com/JetBrains/qodana-action#basic-configuration) recommends this setting.
 - To understand why `fkirc/skip-duplicate-actions@master` is used, see 
   [Skip unnecessary builds on GitHub actions](https://peshrus.github.io/github-actions/skip-build/2021/09/05/skip-unnecessary-builds-on-github-actions.html)
-- `JetBrains/qodana-action@v2022.2.1` is available, but it doesn't work (see [the found bugs](#found-bugs)).
 - `--project-dir,backend` & `--project-dir,frontend` are used to switch the Qodana project directory. In that directory I have `qodana.yaml`
   & `qodana.sarif.json` files.
 - `--baseline,qodana.sarif.json` is used to set up the baseline for the Qodana scan.
-- `--commit,CI{% raw %}${{ github.event.pull_request.base.sha }}{% endraw %}` is set to scan only PR-related changes. The `pr-mode` setting
-  doesn't work because of the bug (see [the found bugs](#found-bugs)).
 - `results-dir`, `artifact-name`, `cache-dir`, and `additional-cache-hash` are used to add the `-backend` and
   the `-frontend` postfixes to separate 2 steps that are executed in the same job. Otherwise, they clash with each
   other.
 - `pr-mode: true` is the default value that adds to `args` `--changes,--commit,CI<SHA>`. However `--changes` raises an
   exception when it's used in a sub-folder (see [the found bugs](#found-bugs)). That's the reason why `pr-mode` is set
-  to `false` and `--commit` is set manually.
+  to `false`.
 
 ## Found bugs
 
-- [JetBrains/qodana-action@v2022.2.1 fails with an exception when used in a monorepo project](https://youtrack.jetbrains.com/issue/QD-4015)
-- [The --changes argument raises an exception when used in a sub-folder of a monorepo project](https://youtrack.jetbrains.com/issue/QD-4014)
 - [qodana.baselinePath setting in build.gradle raises an error](https://youtrack.jetbrains.com/issue/QD-4013)
+- [The --changes argument raises an exception when used in a sub-folder of a monorepo project](https://youtrack.jetbrains.com/issue/QD-4014)
+- [JetBrains/qodana-action@v2022.2.1 fails with an exception when used in a monorepo project](https://youtrack.jetbrains.com/issue/QD-4015)
 - [The --source-directory argument with a sub-folder in a monorepo produces no results](https://youtrack.jetbrains.com/issue/QD-4025)
+- [jetbrains/qodana-js:latest behaves differently locally and on CI](https://youtrack.jetbrains.com/issue/QD-4038)
+- [jetbrains/qodana-jvm:latest behaves differently locally and on CI](https://youtrack.jetbrains.com/issue/QD-4039)
 
 ## Further reading
 
